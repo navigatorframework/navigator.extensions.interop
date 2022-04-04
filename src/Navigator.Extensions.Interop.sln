@@ -1,8 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navigator.Extensions.Interop", "Navigator.Extensions.Interop\Navigator.Extensions.Interop.csproj", "{152F12A0-EBB9-4B32-AAED-E37DAB89EF68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{152F12A0-EBB9-4B32-AAED-E37DAB89EF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{152F12A0-EBB9-4B32-AAED-E37DAB89EF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{152F12A0-EBB9-4B32-AAED-E37DAB89EF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{152F12A0-EBB9-4B32-AAED-E37DAB89EF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
