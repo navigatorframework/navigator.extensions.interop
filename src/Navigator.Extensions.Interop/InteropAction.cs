@@ -10,23 +10,23 @@ namespace Navigator.Extensions.Interop;
 [ActionPriority(Actions.Priority.High)]
 public class InteropAction : ProviderAgnosticAction
 {
-    private readonly (string Path, string Name) _module;
-    private 
+    public readonly (string Path, string Name) Module;
+    
     public InteropAction(INavigatorContextAccessor navigatorContextAccessor, (string Path, string Name) module) : base(navigatorContextAccessor)
     {
-        _module = module;
+        Module = module;
     }
 
     public override bool CanHandleCurrentContext()
     {
         using (Py.GIL()) {
             dynamic sys = Py.Import("sys");
-            sys.path.append(_module.Path);
-            dynamic action = Py.Import(_module.Name);
+            sys.path.append(Module.Path);
+            dynamic action = Py.Import(Module.Name);
 
             try
             {
-                return action.can_handle_current_context(this.NavigatorContextAccessor.NavigatorContext.GetOriginalEvent()));
+                return action.can_handle_current_context(NavigatorContextAccessor.NavigatorContext.GetOriginalEvent());
             }
             catch (Exception e)
             {
