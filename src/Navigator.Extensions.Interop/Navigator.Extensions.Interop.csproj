@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Navigator" Version="1.9.0-beta2" />
-        <PackageReference Include="Python.Included" Version="3.10.0-preview1" />
+        <PackageReference Include="Navigator" Version="1.9.0-beta9" />
+        <PackageReference Include="pythonnet" Version="3.0.0-preview2022-04-03" />
     </ItemGroup>
 
 </Project>
