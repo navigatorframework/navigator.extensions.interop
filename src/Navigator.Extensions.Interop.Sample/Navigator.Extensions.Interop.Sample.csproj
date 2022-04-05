@@ -6,4 +6,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Navigator.Extensions.Interop\Navigator.Extensions.Interop.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Navigator.Providers.Telegram" Version="1.9.0-beta9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Actions\InteropAction.py">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
