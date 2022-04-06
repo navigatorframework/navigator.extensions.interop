@@ -4,6 +4,18 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>Navigator.Extensions.Interop</Title>
+        <Authors>Lucas Maximiliano Marino</Authors>
+        <Description>Extend your navigator bot with python scripts interop.</Description>
+        <PackageProjectUrl>https://github.com/navigatorframework/navigator.extensions.interop</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/navigatorframework/navigator.extensions.interop</RepositoryUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/navigatorframework/navigator/master/assets/logo.png</PackageIconUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>Interop, Bot, Framework, Navigator</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+        <Copyright>Copyright © Lucas Maximiliano Marino 2022</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
