@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Navigator.Providers.Telegram" Version="1.9.1-beta2" />
+      <PackageReference Include="Navigator.Providers.Telegram" Version="1.9.1-beta3" />
     </ItemGroup>
 
     <ItemGroup>
