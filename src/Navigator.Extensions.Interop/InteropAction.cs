@@ -7,16 +7,22 @@ using Python.Runtime;
 
 namespace Navigator.Extensions.Interop;
 
+/// <inheritdoc />
 [ActionPriority(Actions.Priority.High)]
-public class InteropAction : ProviderAgnosticAction
+public sealed class InteropAction : ProviderAgnosticAction
 {
+    /// <summary>
+    /// Python module to load.
+    /// </summary>
     public readonly (string Path, string Name) Module;
-    
+
+    /// <inheritdoc />
     public InteropAction(INavigatorContextAccessor navigatorContextAccessor, (string Path, string Name) module) : base(navigatorContextAccessor)
     {
         Module = module;
     }
 
+    /// <inheritdoc />
     public override bool CanHandleCurrentContext()
     {
         using (Py.GIL()) {
@@ -26,9 +32,9 @@ public class InteropAction : ProviderAgnosticAction
 
             try
             {
-                return action.can_handle_current_context(NavigatorContextAccessor.NavigatorContext.GetOriginalEvent());
+                return action.can_handle_current_context(NavigatorContextAccessor.NavigatorContext, NavigatorContextAccessor.NavigatorContext.GetOriginalEvent());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
