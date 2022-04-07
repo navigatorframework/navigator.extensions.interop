@@ -1,6 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Navigator.Actions;
 using Navigator.Configuration;
 using Navigator.Configuration.Extension;
@@ -28,8 +26,6 @@ public static class NavigatorExtensionConfigurationExtensions
         return configuration.Extension(configuration =>
         {
             configuration.Services.LoadAllInteropActions();
-
-            var a = typeof(InteropAction).IsAssignableTo(typeof(IAction));
 
             var actions = configuration.Services
                 .Where(descriptor => descriptor.ImplementationType?.IsAssignableTo(typeof(IAction)) 
