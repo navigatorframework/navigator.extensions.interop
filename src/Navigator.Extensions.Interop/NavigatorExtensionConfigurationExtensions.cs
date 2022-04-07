@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Navigator.Actions;
 using Navigator.Configuration;
@@ -9,11 +10,14 @@ namespace Navigator.Extensions.Interop;
 
 public static class NavigatorExtensionConfigurationExtensions
 {
-    public static NavigatorConfiguration Interop(this NavigatorExtensionConfiguration configuration)
+    public static NavigatorConfiguration Interop(this NavigatorExtensionConfiguration extensionConfiguration, Action<InteropOptions> optionsAction)
     {
+        var options = new InteropOptions();
+        optionsAction.Invoke(options);
+        
         try
         {
-            Runtime.PythonDLL = "libpython3.so";
+            Runtime.PythonDLL = options.Runtime ?? "libpython3.so";
             PythonEngine.Initialize();
             PythonEngine.BeginAllowThreads();
         }
@@ -22,8 +26,8 @@ public static class NavigatorExtensionConfigurationExtensions
             Console.WriteLine(e);
             throw;
         }
-
-        return configuration.Extension(configuration =>
+        
+        return extensionConfiguration.Extension(configuration =>
         {
             configuration.Services.LoadAllInteropActions();
 
