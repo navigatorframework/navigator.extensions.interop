@@ -8,7 +8,7 @@ using Python.Runtime;
 namespace Navigator.Extensions.Interop;
 
 /// <inheritdoc />
-[ActionPriority(Actions.Priority.High)]
+[ActionPriority(2500)]
 public sealed class InteropAction : ProviderAgnosticAction
 {
     /// <summary>
