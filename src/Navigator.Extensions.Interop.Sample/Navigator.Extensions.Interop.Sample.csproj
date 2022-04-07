@@ -15,10 +15,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Actions\InteropAction.py">
+      <None Update="Actions\TextSample.py">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Actions\InteropAction2.py">
+      <None Update="Actions\StickerSample.py">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

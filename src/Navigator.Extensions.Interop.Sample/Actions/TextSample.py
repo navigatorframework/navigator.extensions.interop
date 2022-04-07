@@ -1,7 +1,7 @@
 from Telegram.Bot import TelegramBotClientExtensions as navigator
 
 
-def can_handle_current_context(event):
+def can_handle_current_context(context, event):
     return (event.Message is not None) and (event.Message.Text is not None)
 
 
