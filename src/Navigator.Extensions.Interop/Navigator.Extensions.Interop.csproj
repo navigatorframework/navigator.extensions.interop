@@ -19,6 +19,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="/" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Navigator" Version="1.9.1-beta2" />
         <PackageReference Include="pythonnet" Version="3.0.0-preview2022-04-03" />
     </ItemGroup>
