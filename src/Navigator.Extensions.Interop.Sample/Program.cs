@@ -15,7 +15,7 @@ builder.Services
         options.SetWebHookBaseUrl(builder.Configuration["BASE_WEBHOOK_URL"]);
         options.RegisterActionsFromAssemblies(typeof(EchoAction).Assembly);
     })
-    .WithExtension.Interop()
+    .WithExtension.Interop(options => { options.Runtime = builder.Configuration["INTEROP_PYTHON"]; })
     .WithProvider.Telegram(options => { options.SetTelegramToken(builder.Configuration["BOT_TOKEN"]); });
 
 var app = builder.Build();
