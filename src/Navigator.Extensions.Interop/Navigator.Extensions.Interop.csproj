@@ -23,8 +23,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Navigator" Version="1.9.2-beta1" />
-        <PackageReference Include="pythonnet" Version="3.0.0-preview2022-04-03" />
+        <PackageReference Include="Navigator" Version="1.9.3-beta1" />
+        <PackageReference Include="pythonnet" Version="3.0.0-preview2022-04-09" />
     </ItemGroup>
 
 </Project>
