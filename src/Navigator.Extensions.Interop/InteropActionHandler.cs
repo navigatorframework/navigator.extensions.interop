@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using Navigator.Actions;
 using Navigator.Context;
 using Navigator.Context.Extensions.Bundled.OriginalEvent;
@@ -7,10 +8,15 @@ namespace Navigator.Extensions.Interop;
 
 public abstract class InteropActionHandler : ActionHandler<InteropAction>
 {
-    protected InteropActionHandler(INavigatorContextAccessor navigatorContextAccessor) : base(navigatorContextAccessor)
+    private readonly ILogger<InteropActionHandler> _logger;
+
+    /// <inheritdoc />
+    protected InteropActionHandler(INavigatorContextAccessor navigatorContextAccessor, ILogger<InteropActionHandler> logger) : base(navigatorContextAccessor)
     {
+        _logger = logger;
     }
 
+    /// <inheritdoc />
     public override async Task<Status> Handle(InteropAction action, CancellationToken cancellationToken)
     {
         using (Py.GIL()) {
@@ -26,6 +32,7 @@ public abstract class InteropActionHandler : ActionHandler<InteropAction>
             }
             catch (Exception e)
             {
+                _logger.LogError(e, "Unhandled error inside interop action handler for {@Action}", action);
                 return new Status(false);
             }
         }

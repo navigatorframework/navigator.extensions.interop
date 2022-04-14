@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Navigator.Actions;
 using Navigator.Configuration;
 using Navigator.Configuration.Extension;
@@ -56,8 +57,9 @@ public static class NavigatorExtensionConfigurationExtensions
                 services.AddScoped<InteropAction, InteropAction>(provider =>
                 {
                     var accessor = provider.GetRequiredService<INavigatorContextAccessor>();
+                    var logger = provider.GetRequiredService<ILogger<InteropAction>>();
 
-                    return new InteropAction(accessor, (path, name));
+                    return new InteropAction(accessor, logger, (path, name));
                 });
             }
         }

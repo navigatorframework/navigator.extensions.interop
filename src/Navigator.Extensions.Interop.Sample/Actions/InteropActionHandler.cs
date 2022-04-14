@@ -6,7 +6,7 @@ namespace Navigator.Extensions.Interop.Sample.Actions;
 
 public class CustomInteropActionHandler : InteropActionHandler
 {
-    public CustomInteropActionHandler(INavigatorContextAccessor navigatorContextAccessor) : base(navigatorContextAccessor)
+    public CustomInteropActionHandler(INavigatorContextAccessor navigatorContextAccessor, ILogger<CustomInteropActionHandler> logger) : base(navigatorContextAccessor, logger)
     {
     }
 
